@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Register</h1>
+
+    <p> Pour se connecter en tant que admin veuiller saisir un username "admin" et choisissez votree password et vous pourrez par la suite gérer les produits et Les
+utilisateurs ( modifier,supprimer,ajouter)
+    Sinon , si vous choisissez un username et un password vous serez en mode User et vous ne pouvez pas gérer le produits et les utilisatueurs </p>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.username) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}
